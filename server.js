@@ -9,6 +9,10 @@ const fs = require('fs');
 // app.use(cors());
 app.use('/', express.static('public'));
 
+app.get('/hello', (req, res) => {
+    res.send('Hello world!');
+});
+
 
 app.get('/budget', (req, res) => {
     fs.readFile('data.json', 'utf8', (err, data) => {
